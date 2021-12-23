@@ -3,12 +3,12 @@ var $ = function (id) {
 }
 
 //the dreaded $ variable
-
-var grades = [];
 //array
+var grades = [];
 
 //update scores with scores, first, last, sort by last
-var update_scores = function () {
+var update_scores = function () 
+    {
         var val = get_item_list(grades);
         $("scores").value = val;
         $("last_name").value = "";
@@ -17,7 +17,8 @@ var update_scores = function () {
         $("average_score").value = getAverageScore(grades);
     }
     //function to add last, first, score to studentGrade
-var addScore = function () {
+var addScore = function () 
+{
 
     var last = $("last_name").value;
     var first = $('first_name').value;
@@ -28,14 +29,18 @@ var addScore = function () {
 }
 
 
-var get_item_list = function (item_list) {
-    if (item_list.length == 0) {
+var get_item_list = function (item_list) 
+{
+    if (item_list.length == 0) 
+    {
         return "";
     }
     var list = "";
-    for (var i = 0; i < item_list.length; i++) {
+    for (var i = 0; i < item_list.length; i++) 
+    {
         var current = item_list[i];
-        for (var attribute in current) {
+        for (var attribute in current) 
+        {
             list += current[attribute] + ", ";
         }
         list += "\n";
@@ -59,7 +64,8 @@ function getAverageScore(grades) { //function-takes grades array
     
 }
 
- var clearScores = function () {   
+ var clearScores = function () 
+ {   
     grades.splice(0, grades.length); 
     // remove the score data from the web page
     $("average_score").value = "";
@@ -73,7 +79,8 @@ var sortScores = function () //ENTIRE FUNCTION TO SORT ARRAY AND REPRINT
         update_scores();
     }
 
-window.onload = function () {
+window.onload = function () 
+{
 
     $("add_button").onclick = addScore;
     $("sort_button").onclick = sortScores;
